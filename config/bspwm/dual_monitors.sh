@@ -1,7 +1,7 @@
 #!/bin/sh
 
-INTERNAL_MONITOR="eDP-1"
-EXTERNAL_MONITOR="HDMI-1-1"
+INTERNAL_MONITOR="DVI-D-1"
+EXTERNAL_MONITOR="VGA-1"
 
 monitor_add() {
   # Move first 5 desktops to external monitor
@@ -43,8 +43,7 @@ fi
 
 if [[ $(xrandr -q | grep "${EXTERNAL_MONITOR} connected") ]]; then
   # set xrandr rules for docked setup
-  xrandr --output "$INTERNAL_MONITOR" --mode 1920x1080 --pos 0x0 --rotate normal
-  xrandr --output "$EXTERNAL_MONITOR" --primary --mode 2560x1440 --pos 1920x0 --rotate normal --left-of "$INTERNAL_MONITOR"
+ xrandr --output VGA-1 --mode 832x624 --pos 0x228 --output DVI-D-1 --mode 1920x1080 --primary --pos 832x0
   
   if [[ $(bspc query -D -m "${EXTERNAL_MONITOR}" | wc -l) -ne 5 ]]; then
     monitor_add
@@ -52,7 +51,7 @@ if [[ $(xrandr -q | grep "${EXTERNAL_MONITOR} connected") ]]; then
   bspc wm -O "$EXTERNAL_MONITOR" "$INTERNAL_MONITOR"
 else
   # set xrandr rules for mobile setup
-  xrandr --output "$INTERNAL_MONITOR" --primary --mode 1920x1080 --pos 0x0 --rotate normal --output "$EXTERNAL_MONITOR" --off
+  xrandr --output VGA-1 --mode 832x624 --pos 0x228 --output DVI-D-1 --mode 1920x1080 --primary --pos 832x0
   if [[ $(bspc query -D -m "${INTERNAL_MONITOR}" | wc -l) -ne 10 ]]; then
     monitor_remove
   fi
