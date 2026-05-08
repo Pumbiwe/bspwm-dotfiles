@@ -42,7 +42,6 @@ BASE_PACKAGES = [
     "sudo",  # Выполнение команд с правами root
     "ffmpeg",  # Утилита для работы с медиа
     "polybar",  # Верхняя панель с рабочими столами и управлением системой
-    "torbrowser-launcher",  # Лаунчер тора и служба для работы в фоне
     "dpkg",  # Средство для сборки Debian пакетов
     "gcc", "clang",  # Компилятор языка С и пакет для поддержки языка
     "git",  # Система контроля версий
@@ -53,7 +52,6 @@ BASE_PACKAGES = [
     "ueberzug",  # Используется для отображения превью изображений и прочего медиа-контента
     "xclip",  # Работа с буфером обмена используя терминал
     # "breeze", # TODO: Deprecated
-    "openvpn",  # Поддержка протокола OpenVPN
     "reflector",  # Получить последний список зеркал
     # "uthash",  # TODO: Deprecated
     "slop",  # Получить координаты клика мыши
@@ -66,7 +64,7 @@ BASE_PACKAGES = [
     "mpv",  # Просмотр видео
     "alsa-plugins", "alsa-utils",  # Плагины и утилиты для Alsa
     # "alsa-tools",  # TODO: Deprecated
-    "network-manager-applet", "networkmanager-openvpn",
+    "network-manager-applet",
     "gparted",  # Работа с носителями в системе
     "intel-ucode",  # Микрокод для процессоров intel
     "gnu-netcat",  # Утилиты для работы с сетью
@@ -103,7 +101,6 @@ DEV_PACKAGES = [
     # "dconf-editor",  TODO: Deprecated
     "neovim",  # Консольный редактор кода
     "obs-studio",  # Запись видео и управление трансляциями
-    "telegram-desktop",  # Мессенджер
     "tmux",  # TODO: Deprecated
     "yt-dlp",  # Утилита для работы с youtube
     "code",  # Редактор кода
